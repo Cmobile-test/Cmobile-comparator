@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Map</title>
+
+    <link href="album.css" rel="stylesheet">
+        <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style type="text/css">
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru
+        const uluru = { lat: 37.1881700, lng: -3.6066700 };
+        const mediamarkt1 = { lat: 37.1475468, lng: -3.6139667 };
+        const mediamarkt2 = { lat: 37.2124417, lng: -3.6171141 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 10,
+          center: uluru,
+        });
+        
+        // Marker posicionado en Armilla (Nevada)
+        const marker = new google.maps.Marker({
+          position: mediamarkt1,
+          map: map,
+        });
+
+        // Marker posicionado en Pulianas (Kinepolis)
+        const marker2 = new google.maps.Marker({
+          position: mediamarkt2,
+          map: map,
+        });
+
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">Cmobile</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                
+                  <a class="nav-link" href="/busqueda">Buscar</a>
+                  <a class="nav-link" href="/comparador">Comparar</a>
+                  <a class="nav-link" href="/mapa">Mapa</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <h3>Tiendas físicas</h3>
+   
+    <div id="map"></div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjO4q3nOXg-ZUrJUQvOYFzIpxsO2h54OE&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+
+    <footer class="text-muted py-5">
+        <div class="container">
+      
+          <p class="float-end mb-1">
+            <a href="#">Volver al inicio</a>
+          </p>
+      
+          <p class="mb-1">
+            Francisco Lara Marín <br>
+            Daniel Maldonado Jerónimo
+      
+          </p>
+        </div>
+      </footer>
+  </body>
+</html>
