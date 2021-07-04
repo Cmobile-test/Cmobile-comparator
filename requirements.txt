@@ -1,0 +1,5 @@
+gmaps==0.9.0
+Flask_MySQLdb==0.2.0
+googlemaps==4.4.5
+Flask==2.0.1
+gunicorn
